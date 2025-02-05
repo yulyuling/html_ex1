@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- input : 입력받을 수 있는 -->
+     <!-- placeholder : 설명 -->
+     <!-- disabled  수정을 못하게 함-->
+    <div>
+        <!-- 아이디 : <input type="text" value="test" disabled placeholder="아이디를 입력하세요"> -->
+        아이디 : <input type="text" placeholder="아이디를 입력하세요">
+    </div>
+    <div>
+        비밀번호 : <input type="password" placeholder="비밀번호 입력">
+    </div>
+    <div>
+        <input type="button" value="로그인" onclick="alert('로그인 성공!')">
+    </div>
+    <hr>
+    <div>
+        숫자입력 : <input type="number">
+        날짜 : <input type="date" min="2025-01-01" max="2025-02-05">
+    </div>
+    <!-- label: 글씨를 선택해도 클릭가능 -->
+    <div>
+        <label><input type="checkbox" checked> 자바</label>
+        <label><input type="checkbox"> 오라클</label>
+        <label><input type="checkbox"> html</label>
+    </div>
+    <div>
+        <label><input type="radio" name="subject" checked> 자바</label>
+        <label><input type="radio" name="subject"> 오라클</label>
+        <label><input type="radio" name="subject"> html</label>
+    </div>
+    <div>
+        <label><input type="radio" name="gender"> 남자 </label>
+        <label><input type="radio" name="gender"> 여자 </label>
+    </div>
+    <div>
+        <input type="file">
+    </div>
+    <div>
+        <textarea rews="10"cols="50" placeholder="자기소개"></textarea>
+    </div>
+    <!-- select : 드랍다운, option 드랍다운 목록  -->
+    <div>
+        <select>
+            <option> 자바 </option>
+            <option> 오라클 </option>
+            <option> html </option>
+        </select>
+    </div>
+</body>
+
+</html>

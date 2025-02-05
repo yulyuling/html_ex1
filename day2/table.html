@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, th, td{
+            border : 2px solid black;
+            border-collapse: collapse;
+            /* 중복된 선 제거 */
+            text-align: center;
+            padding: 5px 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <table border = "1">
+        <!-- th는 헤더의 역할이라 글씨가 더 진하다 -->
+        <tr>
+            <th>숫자1</th>
+            <th>숫자2</th>
+            <th>숫자3</th>
+            <th>숫자4</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">5</td>
+            <td>6</td>
+            <td rowspan="2">7</td>
+        </tr>
+
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+        </tr>
+
+        <tr></tr>
+    </table>
+</body>
+</html>

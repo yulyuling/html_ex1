@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 앞에 .이 붙으면 클래스명으로 인식 */
+        /* #은 id명으로 찾는 것 */
+        .all {
+            font-weight: bold;
+            font-style: italic;
+            background-color: rgb(207, 204, 204);
+        }
+        #txt1 {
+            color: rgb(169, 90, 248);
+            font-size: 30px;
+            
+            /* 얘넨 정말 많이 쓴다 */
+        }
+        #txt2 {
+            color: rgb(248, 90, 95);
+            font-size: 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- class는 자바의 클래스와 다름 구분만 하기 위해 사용 중복사용가능,2개이상 사용가능-->
+    <div class="all" id="txt1">
+    자바는 재밌
+    </div>
+    <div class="all" id="txt2">
+        오라클도 재밌다
+    </div>
+    <div class="txt1">
+        HTML 재밌죠?...
+    </div>
+    <!-- id는 중복x 하나만 읽음. id:uniq -->
+</body>
+</html>
+
+    <!-- css 적용방법 -->
+    <!-- 1.외부파일(.css)링크 -->
+    <!-- 2.style 태그 안에 작성 -->
+    <!-- 3.태그 속성(인라인속성)으로 작성 -->
