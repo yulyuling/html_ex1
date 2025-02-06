@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            border: 2px solid rgb(0, 0, 0);
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color :white;
+            margin: 5px;
+
+        }
+        #box1 {
+            background-color:blue;
+            float: left;
+            /* float은 공중에 떠있는 상태 */
+        }
+        #box2 {
+            background-color:rgb(255, 174, 0);
+            float: left;
+            /* clear: both는 독립적으로 다시 실행한다 */
+            /* 그래서 매번 float을 실행하기 위해 clear:both해야함? */
+        }
+        #box3 {
+            background-color:rgb(48, 126, 103);    
+            clear:both;        
+        }
+    </style>
+</head>
+<body>
+    <div id="box1"> box1 </div>
+    <div id="box2"> box2 </div>
+    <div id="box3"> box3 </div>
+</body>
+</html>

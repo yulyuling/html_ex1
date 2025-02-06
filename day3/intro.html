@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<title>온라인 프로필</title>
+	<meta charset="utf-8">
+  <style>
+    table {
+      width:70%; 
+      border:1px solid #222; 
+      border-collapse: collapse; 
+    }
+    thead {
+      background:#eee;  
+    }
+    th, td {
+      border:1px solid #ccc; 
+      padding:5px;  
+      font-size:0.8em; 
+    }
+    .side {
+        width: 250px;
+        height: 1300px;
+        background-color: rgb(233, 253, 253);
+        border : 2px dotted rgb(255, 255, 255);
+        float: left;
+        clear: both;
+        margin-top: 48px;
+    }
+    #contents {
+        width: 500px;
+        height: 1300px;
+        background-color: rgb(250, 250, 250);
+        float: left;
+        padding : 50px;
+        margin-top: 48px;
+
+    }
+    #sidebar {
+      border:1px solid #ccc; 
+      padding:5px;  
+      font-size:0.8em;
+      width : 120px;
+      height: 20px;
+
+    }
+    #box1{
+      border:1px solid #ccc; 
+      padding:5px;  
+      font-size:0.8em;
+      width : 50px;
+      height: 20px;
+      float: left;
+      text-align: center;
+      font-weight: bold;
+    }
+    #box2{
+      border:1px solid #ccc; 
+      padding:5px;  
+      font-size:0.8em;
+      width : 50px;
+      height: 20px;
+      float: left;
+      text-align: center;
+      font-weight: bold;
+    }
+    #font{
+        text-align: right;
+        font-size: 30px;
+        font-weight: bold;
+        color: #656565;
+    }
+    .box3{
+      padding:5px;  
+      width : 845px;
+      height: 200px;
+      margin-bottom: -50px;
+      background-color: rgb(228, 245, 252);
+      /* position :fixed; */
+    }
+</style>
+  </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- 사이드바 -->
+        <div>
+            <h1 id="box1" style="font-size:12px;"><a href="../day2/media/d2.jpg">건의사항</a></h1>
+        </div>
+        <div>
+            <h1 id="box2" style="font-size:12px;"><a href="../day2/media/d5.jpg">쪽지</a></h1>
+        </div>
+        <div class="box3" id="font"> 양파쿵야의 </div>
+        <div class="box3" id="font"> 오늘만 사는 일상 </div>
+         <div class="side"></div>
+        <div class="side"style="position :fixed; top:30px; left: 10px ">
+            <div id="namecard">
+                <img src="../day2/media/d4.jpg" alt="100px" width="100%" height="100%" position :fixed;>
+                <h1>양파 쿵야</h1>    
+                <p id="sidebar">프로그래밍 재밌다</p>
+            </div>
+            <div id="detail">
+                <p style="margin-top: 30px;">Incheon, Korea</p>
+                <p style="margin-top: -15px;">test@naver.com</p>                                 
+            </div>
+            <div id="sns">
+                <h2>SNS</h2>
+                <h3><a href="../day2/media/d3.jpg"><img src="../day2/media/1.png"></a></h3>
+            </div>           
+        </div>
+        <div id="contents">
+            <section>
+                <h2 class="vertical-text">자기소개</h2>
+                <hr style="border: 1px solid rgb(110, 110, 110); width: 300px; float:left; margin-top: -13px;">
+                <p style="clear: both; margin-top: 40px;">프로그래밍에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
+                <div  style="margin-bottom: 100px;"></div>
+            </section>
+
+            <!-- 경력 -->
+            <section>
+                <h2 class="subtitle">Experience</h2>
+                <hr style="border: 1px solid rgb(110, 110, 110); width: 300px; float:left; margin-top: -13px;">
+                <ul>
+                    <li>프론트엔드
+                        <ul>
+                            <li>HTML/CSS/JAVASCRIPT </li>
+                            <li>웹 페이지 잘 만든다 </li>
+                            <li>다 잘함</li> 
+                        </ul>
+                    </li>
+                    <li>백엔드
+                        <ul>
+                            <li>자바 잘함 </li>
+                            <li>오라클 더 잘함</li>
+                        </ul>                        
+                    </li>
+                </ul>
+                <div  style="margin-bottom: 100px;"></div>             
+            </section>
+
+            <!-- 숙련도 -->
+            <section>
+                <h2 class="subtitle">보유 기술</h2>
+                <hr style="border: 1px solid rgb(110, 110, 110); width: 300px; float:left; margin-top: -13px;">
+                <li style="list-style: none;"> 
+                    <ul>
+                        <li>자바 </li>
+                        <li>오라클</li>
+                    </ul>                        
+                </li>
+                <div  style="margin-bottom: 100px;"></div>
+            </section>
+
+            <!-- 학력 -->
+            <section>
+                <h2 class="subtitle">Education</h2>
+                <hr style="border: 1px solid rgb(110, 110, 110); width: 300px; float:left; margin-top: -13px;">
+                <table>
+                  <caption style="margin-top:10px;">학력 사항</caption>
+                  <div></div>
+                  <thead>
+                      <tr >
+                          <th>출신학교</th>
+                          <th>전공</th>
+                          <th>기간</th>
+                          <th>구분</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>좋은대학교</td>
+                          <td>좋은학과</td>
+                          <td>2010.3 ~ 2013.2</td>
+                          <td>졸업</td>
+                      </tr>
+                      <tr>
+                          <td>꽤좋은고등학교</td>
+                          <td> - </td>
+                          <td>2007.3 ~ 2009.2</td>
+                          <td>졸업</td>
+                      </tr>
+                  </tbody>
+                </table>
+                <div  style="margin-bottom: 100px;"></div>
+            </section>
+        </div>        
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            background-color : rgb(39, 185, 39);
+            color : white;
+            padding : 15px;
+            font-size: 15px;
+            border : none;
+            cursor : pointer;
+
+        }
+        .menu {
+            background-color: #f9f9f9;
+            width: 150px;
+            box-shadow: 1px 3px 8px 3px #e7e3e3;   
+            display: none;  
+        }
+        .menu a {
+            display: block;
+            padding : 10px;
+            cursor : pointer;
+        }
+        .top-menu {
+            display: inline-block;
+        }
+        .top-menu:hover .menu {
+            display: block;
+        }
+        .menu a:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-menu">
+        <button class="btn">Dropdown</button>
+        <div class="menu">
+            <a>Menu 1</a>
+            <a>Menu 2</a>
+            <a>Menu 3</a>
+        </div>
+    </div>
+</body>
+</html>

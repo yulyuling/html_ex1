@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            border: 2px solid rgb(0, 0, 0);
+            background-color: rgb(48, 58, 52);
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color :white;
+            /* fixed는 좌표에만 영향을 받는다. 스크롤에도 영향x*/
+            /* 장바구니나 광고같은거 */
+            position :fixed;
+            top:30px;
+            right:100px
+        }
+        .box2{
+            border: 2px solid rgb(0, 0, 0);
+            background-color: rgb(48, 58, 52);
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color :white;
+            /* position: static은 원래 있어야 할 위치;기본위치고정 */
+            /* ralative는 원래자리를 기준으로 움직이게 됨. 다른속성도있음 */
+            position : relative;
+        }
+        .box3{
+            border: 2px solid rgb(0, 0, 0);
+            background-color: rgb(48, 58, 52);
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color :white;
+            position : absolute;
+            /* abolute: absolute는 가장 가까운 조상 요소 중 (static X)
+            position: relative나 다른 absolute, fixed, sticky 속성을
+             가진 요소를 기준으로 배치됩니다.
+             없으면 body를 기준으로 배치됨*/
+            top : 30px;
+            left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        box1
+    </div>
+    <div class="box2">
+        box2
+    </div>
+
+    <div style="position: relative; margin-bottom: 2000px;">
+        <div class="box3">
+            box3
+        </div>
+    </div>
+
+</body>
+</html>

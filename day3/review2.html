@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            border: 2px solid rgb(0, 0, 0);
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color :white;
+            margin-bottom: 5px;
+        }
+        .box2{
+            border: 2px solid rgb(0, 0, 0);
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color :white;
+
+        }
+        .div1{
+            display: inline-block;
+        }
+        .box3{
+            border: 2px solid rgb(0, 0, 0);
+            background-color: rgb(48, 58, 52);
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            color :white;
+            display: block;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 100px * 100px 박스 2개 -->
+    <!-- 배경이 파란색, 빨간색 -->
+    <!-- box1, box2 -->
+    <!-- 테두리는 2px solid 검은색 -->
+     <!-- span은 영역만 적용된다. 그렇지만 안의 '요소만큼만' 차지하기때문에-->
+     <!-- class로 아무리 크기를 조정해도 요소(글자 등)만큼만 반환함. -->
+     <!-- span은 디스플레이가 인라인임 -->
+    <!-- display: inline-block;를 쓰면 인라인+블록을 가짐 -->
+    <div class="box1 div1"> box1 </div>
+    <div class="box2 div1"> box2 </div>
+    <div class="box3"> box3</div>
+</body>
+</html>
