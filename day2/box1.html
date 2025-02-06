@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            /*margin-top; 위의 여백: 아무것도 안 적으면 상하좌우 전부 다 여백줌*/
+            margin : 10px
+            /*margin 값을 1개, 2개(상하, 좌우), 4개(상,우,하,좌) 가질 수 있다.*/
+            /*  margin-top : 20px;
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-bottom: 20px; */
+        }
+        .box1{
+           border : 4px solid black;
+           /* border-width: 1px;
+           border-style: solid;
+           border-color: black; */
+           width: 70px;
+           height: 70px;
+           text-align: center;
+           line-height: 70px;
+           /*line-height:는 height랑 같은 값을 쓰면 위아래 정렬*/
+        }
+        .box2{
+            border : 4px solid rgb(122, 189, 170);
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            background-color: rgb(221, 229, 211);
+            border-top-color: rgb(255, 255, 255);
+            /*상자 한쪽만 색깔 바꾸기*/
+            border-top-left-radius: 10px;
+            border-radius: 50px;
+            box-shadow: 4px 2px 2px rgb(0, 0, 0);
+            /*상자 동그랗게 만들기*/
+        }
+        .pd{
+            /*패딩은 안쪽여백 얘도 margin처럼 상하좌우 가능*/
+            padding : 5px 10px 15px 20px;
+            /*  margin-top : 20px;
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-bottom: 20px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 pd">box1</div>
+    <div class="box2">box2</div>
+    <div>HTML</div>
+</body>
+</html>
