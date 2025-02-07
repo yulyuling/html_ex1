@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+     <!-- 클릭하면 빨간색으로 바뀌는 걸 한대 -->
+    <h1 id="txt" onclick="fnColor()"> 자바는 재밌다 ! </h1>
+</body>
+</html>
+<script>
+    function fnColor(){
+        let obj = document.querySelector("#txt");
+        obj.style.color = "purple";
+        obj.innerHTML = "zzzzzzz";
+
+    }
+</script>
