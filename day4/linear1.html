@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border : 1px solid #ccc;
+        }
+        .grad1{
+            background: linear-gradient(to right bottom, blue, white);
+            /* -color를 넣어서쓰냐 안쓰냐의 차이 */
+        }
+        .grad2{
+            background: linear-gradient(90deg, blue, white);
+        }
+        .grad3{
+            background: linear-gradient(to right, blue, white 40%, blue);
+        }
+    </style>
+</head>
+<body>
+    <div class="box grad3">
+
+    </div>
+</body>
+</html>

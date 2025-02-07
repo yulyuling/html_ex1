@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리 예제</title>
+    <style>
+
+        header {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        }
+
+        main {
+        padding: 20px;
+        }
+
+        header {
+            font-size: 24px;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+            /* 양 끝 요소는 컨테이너의 양쪽 끝에 붙고, 나머지 요소들은 균등한 간격을 가집니다. */
+        }
+
+        .content {
+            width: 45%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        @media screen and (max-width : 768px) {
+                header {
+                    font-size: 15px;
+                }
+                main {
+                padding: 10px;
+                display: block;
+                }
+                .content {
+                width: 100%;
+                margin-bottom: 5px;
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+      }
+    </style>
+    </head>
+    <body>
+    <header>
+        <h1>미디어 쿼리 예제</h1>
+    </header>
+
+  <main>
+    <div class="content">
+      <h2>첫 번째 콘텐츠</h2>
+      <p>이 영역은 화면 크기에 따라 다르게 표시됩니다.</p>
+    </div>
+    <div class="content">
+      <h2>두 번째 콘텐츠</h2>
+      <p>화면 크기에 따라 레이아웃과 스타일이 변경됩니다.</p>
+    </div>
+  </main>
+</body>
+</html>

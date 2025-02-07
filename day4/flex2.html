@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            background-color: #eee;
+            display: flex;
+            justify-content: row;
+            /*  justify-content: 컨테이너와 같이 내부에서 쓸 수 있다. */
+        }
+        .box{
+            text-align: center;
+            width: 70px;
+            padding: 10px 40px;
+            margin: 5px;
+            background-color: gray;
+            color: white;
+        }
+        .wrap1{
+            flex-wrap: nowrap; /*플렉스 안의 요소들을 한줄에 강제배치하게 해줌*/
+            /* 자동으로 크기를 조절하기때문에 width는 쓰면안됨 */
+        }
+        .wrap2{
+            flex-wrap: wrap; /*화면비율에 따라서 자동으로 늘렸다 줄었따 함*/
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="wrap2">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+        <div class="box">box5</div>
+        <div class="box">box6</div>
+        <div class="box">box7</div>
+        <div class="box">box8</div>
+    </div>
+</body>
+</html>

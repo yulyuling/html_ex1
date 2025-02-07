@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* mq :: 창을 줄이고 늘리고 할때, 메뉴가 사라지거나 다시 생기는 것 */
+        body{
+            /* 전체에 이미지를 주고 싶을때 body 전체에 준다 */
+            background: url(../day4/img/1.jpg) no-repeat fixed;
+            /* no-repeat 반복x fixed(위치)*/
+            background-size: cover;
+        }
+        /* @media not(이 들어가면 적용않겠다) screen { */
+        /* @media screen */            
+        @media screen and (max-width : 1024px){
+            body{
+                background: url(../day4/img/2.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+        @media screen and (max-width : 764px)
+        {            body{
+                background: url(../day4/img/3.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+        @media screen and (max-width : 425px){
+            body{
+                background: url(../day4/img/4.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

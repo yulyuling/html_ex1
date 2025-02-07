@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            background-color: #eee;
+            display: flex;
+            /*  justify-content: 컨테이너와 같이 내부에서 쓸 수 있다. */
+        }
+        .box{
+            text-align: center;
+            width: 70px;
+            padding: 10px 40px;
+            margin: 5px;
+            background-color: gray;
+            color: white;
+        }
+        .contents1{
+            justify-content: center;
+            /* justify-content: 정렬 */
+        }
+        .contents2{
+            justify-content: space-around;
+            /* justify-content: 맨앞,뒤도 하나씩 띄워서 정렬 (균일간격) */
+        }
+        .contents3{
+            justify-content: space-between;
+            /* justify-content: 맨 앞,뒤가 양끝에 붙었다 (균일간격) */
+        }
+        .contents4{
+            justify-content: space-evenly;
+            /* justify-content: 모든 여백을 똑같이 정렬 */
+        }
+    </style>
+</head>
+<body>
+    <div id="container" class="contents1">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+    </div>
+    <div id="container" class="contents2">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+    </div>
+    <div id="container" class="contents3">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+    </div>
+    <div id="container" class="contents4">
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <div class="box">box3</div>
+        <div class="box">box4</div>
+    </div>
+</body>
+</html>

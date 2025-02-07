@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border : 1px solid #ccc;
+        }
+        .grad1{
+            background: repeating-linear-gradient(gray,gray 30px, purple 30px, purple 60px);
+            /* 줄무늬 같은색을 두번씩 쓰는건 위;아래 색을 따로 줄 수도 있다*/
+        }
+        .grad2{
+            background: repeating-radial-gradient(circle, gray,gray 10%, purple 20%, purple 30%);
+            /* 줄무늬 같은색을 두번씩 쓰는건 위;아래 색을 따로 줄 수도 있다*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box grad2">
+
+    </div>
+</body>
+</html>

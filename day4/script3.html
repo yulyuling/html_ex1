@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 버튼 만드는 법이랴 -->
+    <!-- <input type="reset" value="버튼1">
+    <input type="submit" value="버튼1"> 얘네도 만들어지긴하는데, jsp에서나 쓰는 애니깐 걍 넘어가래-->
+    <!-- <input type="button" value="버튼1"> -->
+     <input id="num1" placeholder="숫자 1">
+     <!-- placeholder 입력전에 설명칸 -->
+     <input id="num2" placeholder="숫자 2">
+     <!-- input 박스에 입력하면 내가 따로 정의하지 않아도 value가 들어가있음 -->
+    <button onclick="sum()"> 더하기ㅋㅋ </button>
+    <!-- 파라미터가 없어도 꼭 () 넣으래 안 그러면 출력안됨ㅋㅋ -->
+</body>
+</html>
+<script>
+    //DOM_을 알아야한다~ 요걸 하려면~
+    //HTML안의 코드는 일종의 문서취급한다 DOM=document // 얘가 꺼내올 수 있게 하는게 querySelector 이색키
+    // 혹은 getElementById어쩌고도 있따.
+    function sum(){
+        //근데 얘를 찾으려면 css랑 똑같이 불러야함 . # 이렇게
+        let num1 = document.querySelector("#num1").value;
+        // console.log(obj1.value); //input 태그를 고대로 가져와서 obj1에 담았음 그러니깐 .value를 불러서 숫자꺼내
+        let num2 = document.querySelector("#num2").value;
+        console.log(parseInt(num1) + Number(num2));
+        //문자를 숫자로 parseInt, number
+        // document.write(obj1.value + obj2.value );
+        // == 함수가 없음. ===가 있음
+        // js에서 '=='이거는 타입비교 x, 값만 비교함.
+        // 근데  === 이거는 타입까지 비교함.
+        if(num1 == 10){ 
+            alert("같다!");
+        } else {
+            alert("다르다");
+        }
+    }
+
+</script>

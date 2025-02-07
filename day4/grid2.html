@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 600px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr );
+            /* grid-template-rows: 100px 200px; */
+            /* 행과 열을 정렬해줌. div여도 */
+            /* repeat() ::  3,은 3개로 나누겠다. 1fr은 같은 간격으로 하겠다.
+            너비를 정하지않으면 전체간격으로 나눠짐. 화면 비율이 늘어나든 줄어들든 무조건 3등분*/
+            grid-auto-rows: minmax(150px, auto);
+            /* 동일한 크기 100px 이렇게 사용 */
+            /* 100px, auto :: minmax는 최소100px 최대는 내부크기만큼 늘려준다 */
+            /* 화면배치시 많이 사용됨. 모바일앱/웹 변경하는것처럼 */
+        }
+        .box {
+            background-color: rgb(206, 206, 206);
+            border: 1px solid rgb(88, 88, 88);
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box"> 이 헌법시행 당시에 이 헌법에 의하여 새로 설치될 기관의 권한에 속하는 직무를 행하고 있는 기관은 이 헌법에 의하여 새로운 기관이 설치될 때까지 존속하며 그 직무를 행한다.
+
+            선거운동은 각급 선거관리위원회의 관리하에 법률이 정하는 범위안에서 하되, 균등한 기회가 보장되어야 한다. 대법원장의 임기는 6년으로 하며, 중임할 수 없다. </div>
+        <div class="box"> 제2항의 재판관중 3인은 국회에서 선출하는 자를, 3인은 대법원장이 지명하는 자를 임명한다. 이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다 </div>
+        <div class="box"> 원장의 임기는 6년으로 하며, 중임할 수 없다. 헌법재판소 재판관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니한다. </div>
+        <div class="box"> 대통령은 취임에 즈음하여 다음의 선서를 한다. 대한민국은 민주공화국이다. </div>
+        <div class="box"> 국가원로자문회의의 의장은 직전대통령이 된다. 다만, 직전대통령이 없을 때에는 대통령이 지명한다. </div>
+        <div class="box"> 모든 국민은 근로의 의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다. </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mq 테스트</title>
+  <style>
+    * {
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    body {
+        background:rgb(9, 100, 160);
+    }
+
+    img{
+        width: 300px;
+        height: 250px;
+    }
+    #container {
+        width:1140px;
+        margin:50px auto;
+    }    
+    .card {
+        position:relative;
+        /* relative 원래 있어야하는 위치에 */
+        float:left;  /* 카드를 가로로 배치 */
+        width:550px;
+        height:250px;
+        margin:10px;
+        border:1px solid #0f0f0f33;
+        background-color:#ffffff;      
+    }
+    .words {
+        position:absolute;
+         /* 스태틱이 아닌 애를 기준으로 좌표를 잡음. */
+        left:310px;
+        top:70px;
+        text-align:center;
+        width:200px;          
+    }
+    @media screen and (max-width: 1024){
+        #container {
+            width:600px;
+            margin:50px auto;
+        }
+        .card { 
+            clear: both;    
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .card{
+            position:relative;
+        /* relative 원래 있어야하는 위치에 있는 애 */
+            width:300px;
+            height:500px; 
+        }
+        .words {
+        position:absolute;    
+        left:50px;
+        top:300px;
+        /* 탑에서 300아래, left에서 50으로 옆에 */
+        /* absolute는 스태틱이 아닌 애(card:relative)를 기준으로 이동 */
+        text-align:center;
+        width:200px;
+        }
+        #container {
+            width:350px;
+            /* 얘는 왜 있음 */
+            margin:50px auto;
+            /* 위에서 50px아래에서 auto로 맞춤^^ㅋ얘로 가운데로 이동한다 */
+        }
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="card">
+      <img src="../day2/media/d1.jpg">    
+      <div class="words">
+        <h2>아유... 하기 싫어..</h2>
+        <h3>- 박명수</h3>
+      </div>            
+    </div>
+    <div class="card">
+      <img src="../day2/media/d2.jpg">    
+      <div class="words">
+        <h2>그냥 놀고 싶다</h2>
+        <h3>- 박명수</h3>
+      </div>            
+    </div>            
+  </div>
+</body>
+</html>

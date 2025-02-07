@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            border: 1px solid black;
+            width: 800px;
+            display: grid;
+            /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+            /* 별다른 크기설정 없이 만든 박스의 크기 컨테이너크기에 따라서 비율을 맞춰서 알아서 출력 */
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            /* 전체크기는 800인데 여백을 다 채우지 않음 */
+            /* 최대한 많이 채울 수 있게 최대값에 맞춰서 최대한 압축함 *크기를 줄여버림. */
+            /* 근데 오토핏을 더 많이 씀ㅋㅋ */
+        }
+        .box {
+            background-color: rgb(206, 206, 206);
+            border: 1px solid rgb(88, 88, 88);
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box"> box1 </div>
+        <div class="box"> box2 </div>
+        <div class="box"> box3 </div>
+        <div class="box"> box4 </div>
+        <div class="box"> box5 </div>
+        <div class="box"> box6 </div>
+    </div>
+</body>
+</html>

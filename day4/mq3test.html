@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-auto-rows: auto;
+        }
+
+        main {
+            display: flex;
+            justify-content: space-between;
+        }
+        .content {
+            width: 45%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        body{
+            /* 전체에 이미지를 주고 싶을때 body 전체에 준다 */
+            background-color:darkcyan;
+            /* no-repeat 반복x fixed(위치)*/
+            background-size: cover;
+        }
+        .content{
+            border: 1px solid beige;
+        }
+        main {
+
+            padding: 10px;
+            display: block;
+        }
+        main {
+            display: flex;
+            justify-content: space-around;
+            /* 양 끝 요소는 컨테이너의 양쪽 끝에 붙고, 나머지 요소들은 균등한 간격을 가집니다. */
+        }
+        .content {
+            width: 100%;
+            margin-bottom: 5px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        @media screen and (max-width : 768px) {
+            main {
+                padding: 40px;
+                display: block;
+            }
+            .content {
+                width: 100%;
+                margin-bottom: 5px;
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+    </style>
+    <main>
+</head>
+<body>
+    <div class="content">
+        <a><img src="../day2/media/d1.jpg" width="300px"></a>
+        <p>1</p>
+    </div>
+    <div class="content">
+        <a><img src="../day2/media/d3.jpg" width="300px"></a>
+        <p>2</p>
+    </div>
+    </main>
+</body>
+</html>
