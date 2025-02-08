@@ -1,61 +1,193 @@
-<!DOCTYPE HTML>
-<!--
-	Visualize by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
---><html><head><title>홍길동</title><meta charset="utf-8"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="assets/css/main.css"></head><body>
-	<style>
-		.img{
-			width: auto; /* 원본 크기 유지 */
-    		height: auto; /* 원본 크기 유지 */
-    		object-fit: none; /* 이미지 잘리지 않음 */
+
+<html>
+<head>
+    <title>BOME</title>
+    <meta charset="utf-8">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <style>
+        .img {
+            width: auto; /* 원본 크기 유지 */
+            height: auto; /* 원본 크기 유지 */
+			cursor: pointer;
+            /* object-fit: none; 이미지가 잘리지 않도록 설정 */
+        }
+		.textPage{
+			text-decoration: underline;
+			text-decoration-color: rgba(255, 255, 255, 0.8);
 		}
-	</style>
+		 /* 모달 오버레이 스타일 */
+		 .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+        /* 모달 내부 iframe 스타일 */
+        .modal-content {
+            width: 80%;
+            height: 80%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        /* 닫기 버튼 */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            color: rgb(255, 255, 255);
+            border: none;
+            /* padding: 8px 12px; */
+            cursor: pointer;
+			width: 30px;
+			height: 40px;
+			border-radius: 50%;
+            object-fit: cover;
+			/* text-shadow: 2px 2px 3px rgb(206, 206, 206); */
 
-				<!-- Header -->
-					<header id="header"><span class="avatar"><img src="../visualize/images/a3.jpg" alt="" width="173" height="178"></span>
-						<h1>This is <strong>Visualize</strong>, a responsive site template designed by <a href="http://templated.co">TEMPLATED</a><br>
-						and released for free under the Creative Commons License.</h1>
-						 <!-- <ul class="icons"><li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li> -->
-							<!-- <li><a href="#" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li> -->
-							<!-- <li><a href="#" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li> -->
-							<!-- <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li> -->
-						<ul class="icons">
-							<li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
-						</ul>
-					</header>Main<section id="main"><!-- Thumbnails --><section class="thumbnails"><div>
-									<a href="images/fulls/01.jpg">
-										<img src="images/dog/17.jpg" class="img" alt="" width="346" height="494"><h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-									<a href="images/fulls/02.jpg">
-										<img src="images/dog/2.jpg" class="img" alt="" width="346" height="239"><h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-								</div>
-								<div>
-									<a href="images/fulls/03.jpg">
-										<img src="images/dog/21.jpg" class="img" alt="" width="346" height="239"><h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-									<a href="images/fulls/04.jpg">
-										<img src="images/dog/12.jpg" class="img" alt="" width="346" height="339"><h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-									<a href="images/fulls/05.jpg">
-										<img src="images/dog/5.jpg" class="img" alt="" width="346" height="299"><h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-								</div>
-								<div>
-									<a href="images/fulls/06.jpg">
-										<img src="images/dog/9.jpg" class="img" alt="" width="346" height="339"><h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-									<a href="images/fulls/07.jpg">
-										<img src="images/dog/7.jpg" class="img" alt="" width="346" height="504"><h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-								</div>
-							</section></section><!-- Footer --></div>
-		<div class="copyright">
-			Made with: <a href="https://templated.co/">Templated.co</a>
-		</div>
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script><script src="assets/js/jquery.poptrox.min.js"></script><script src="assets/js/skel.min.js"></script><script src="assets/js/main.js"></script></body></html>
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			font-size: 14px;
+			font-weight: bold;
+        }
+        /* iframe 스타일 */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <!-- 전체 래퍼 -->
+    <div id="wrapper">
+
+        <!-- 헤더 -->
+        <header id="header">
+            <span class="avatar"><img src="../visualize/images/a2.jpg" alt="" width="173" height="178"></span>
+            <h1> <strong> Welcome, I'm <a href="#">[ Maze ] </a> </strong><br>
+				<span style="text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.2);
+				text-underline-offset: 15px;" >
+				Glad to have you here in my Page </span></h1><br>
+            <!-- <ul class="icons">
+                <li><a href="#" class="icon style2 fa-twitter"><span class="label">트위터</span></a></li> -->
+            <!-- <li><a href="#" class="icon style2 fa-facebook"><span class="label">페이스북</span></a></li> -->
+            <!-- <li><a href="#" class="icon style2 fa-instagram"><span class="label">인스타그램</span></a></li> -->
+            <!-- <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li> -->
+            <ul class="icons">
+                <li><a href="#" class="icon style2 fa-envelope-o"><span class="label">이메일</span></a></li>
+            </ul>
+        </header>
+
+        <!-- 메인 섹션 -->
+        <section id="main">
+            <!-- 썸네일 섹션 -->
+            <section class="thumbnails">
+                <div>
+                    <a>
+                        <img src="images/code/25.jpg" class="img " data-link="project.html" alt="Project" width="346" height="494" >
+                        <h3> Projects </h3>
+                    </a>
+                    <a>
+                        <img src="images/black/14.jpg" class="img " data-link="" alt="" width="346" height="239">
+                        <h3> Interests </h3>
+                    </a>
+                </div>
+                <div>
+                    <a>
+                        <img src="images/code/34.jpg" class="img" data-link="" alt="" width="346" height="239">
+                        <h3>About Me</h3>
+                    </a>
+                    <a>
+                        <img src="images/code/18.jpg" class="img" data-link="" alt="" width="346" height="339">
+                        <h3>5</h3>
+                    </a>
+                    <a>
+                        <img src="images/dog/22.jpg" class="img" data-link="Dog.html" alt="" width="346" height="299">
+                        <h3>Dooooog</h3>
+                    </a>
+                </div>
+                <div>
+                    <a>
+                        <img src="images/code/17.jpg" class="img " data-link="" alt="" width="346" height="339">
+                        <h3>Experience</h3>
+                    </a>
+                    <a>
+                        <img src="images/dog/12.jpg" class="img " data-link="car.html" alt="" width="346" height="504">
+                        <h3>Car</h3>
+                    </a>
+                </div>
+            </section>
+        </section>
+		
+        <!-- 모달 (썸네일 클릭 시 여기에 링크된 페이지 표시) -->
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <button class="close-btn" id="closeBtn"> <strong> X </strong> </button>
+                <iframe id="modalFrame" src=""></iframe>
+            </div>
+        </div>
+	</div>
+        <!-- 푸터 -->
+    </div>
+    <div class="copyright">
+        A <a href="#">Maze</a>
+    </div>
+    
+    <!-- 스크립트 -->
+    <!-- <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.poptrox.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/main.js"></script> -->
+</body>
+</html>
+
+    <!-- ✅ 스크립트 -->
+    <script>
+		document.addEventListener("DOMContentLoaded", function () {
+	 const images = document.querySelectorAll(".img"); // 모든 이미지 선택
+	 const modal = document.getElementById("modal");
+	 const modalFrame = document.getElementById("modalFrame");
+	 const closeBtn = document.getElementById("closeBtn");
+ 
+	 // 모달이 처음부터 열리지 않도록 설정
+	 modal.style.display = "none";
+	 modalFrame.src = ""; // 초기화
+ 
+	 // 이미지 클릭 시 모달 열기
+	 images.forEach(img => {
+		 img.addEventListener("click", function (event) {
+			 event.preventDefault(); // 기본 링크 이동 막기
+			 const linkUrl = this.getAttribute("data-link"); // 이미지의 data-link 값 가져오기
+			 
+			 if (linkUrl && linkUrl.trim() !== "") {
+                modalFrame.src = linkUrl; // iframe에 링크된 페이지 표시
+                modal.style.display = "flex"; // 모달 열기
+            }
+		 });
+	 });
+ 
+	 // 닫기 버튼 또는 모달 바깥 클릭 시 닫기
+	 modal.addEventListener("click", function (event) {
+		 if (event.target === modal || event.target === closeBtn) {
+			 modal.style.display = "none";
+			 modalFrame.src = ""; // iframe 초기화 (닫힐 때 페이지 리로드 방지)
+		 }
+	 });
+ });
+ 
+	 </script>

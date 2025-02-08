@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* body{
+            margin: 60px auto;
+        } */
+        .text{
+            width: 200px;
+            height: 20px;
+            margin: 30px auto;
+            color: rgb(158, 158, 158);
+        }
+        .mainbox{
+            border:1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 2px 2px 3px black;
+            border-radius: 80px;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            border: block;
+        }
+        .box1{
+            position: relative;
+            border-radius: 80px;
+            border : 100%;
+            /* background-color: rgba(255, 255, 255, 0.3); */
+            margin: 50px auto;
+            margin-left: 300px;
+            top: -30px;
+            width: 100px;
+            height: 100px;
+            /* color:white; */
+            float : left;
+            clear: both;
+            box-shadow: 2px 2px 3px black;
+            /* border: 3px dotted rgb(231, 231, 231); */
+        }
+        .box2{
+            position: absolute;
+            border-radius: 80px;
+            border : 100%;
+            top: 30px;
+            left: 30px;
+            width: 80px;
+            height: 80px;
+            float : left;
+            clear: both;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .contentsbox{
+            position: absolute;
+            border-radius: 20px;
+            /* border: 1px solid rgb(255, 255, 255); */
+            background-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 2px 2px 3px black;
+            margin: auto;
+            width: 30%;
+            height: 100px;
+            text-align: center;
+        }
+        #line{
+            position: absolute;
+            border: 3px dotted rgba(255, 255, 255, 0.5);
+            /* box-shadow: 2px 2px 3px black; */
+            height: 2px;
+            width: 97px;
+            /* background-color: white; */
+            margin: 20px 0;
+        }
+        .font{
+            position: absolute;
+            top: -10px;
+            left: -20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 3px black;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        img{
+            margin: 50%;
+        }
+    </style>
+    <main>
+</head>
+<body>
+    <h1 class="mainbox text" id="text"><strong> My Projects </strong></h1>
+    
+    <div class="project-gallery ">
+        <div class="box1" style="background-color: rgb(66, 11, 54);">
+            <a class="box2" target="_blank">
+                <!-- <img src="images/icon/a/1.png" alt="Project 1"> -->
+                <span><h3 class="font">Project1</h3></span>
+            </a>
+        </div>
+        <div class="box1" style="background-color: rgb(155, 80, 139);">
+            <a class="box2" target="_blank">
+                <!-- <img src="images/icon/a/3.png" alt="Project 2"> -->
+                <span><h3  class="font">Project 2</h3></span>
+            </a>
+        </div>
+        <div class="box1" style="background-color: rgb(190, 155, 183);">
+            <a class="box2" target="_blank">
+                <!-- <img src="images/icon/a/2.png" alt="Project 3"> -->
+                <span><h3 class="font">Project 3</h3></span>
+            </a>
+        </div>
+    </div>
+        <div class="contentsbox" style="top: 130px; left: 500px;">
+            <a href="https://yulyuling.github.io/intro/intro.html" target="_blank" rel="noopener noreferrer">
+            2025.02.06 test
+            </a>
+            
+        </div>
+        <div class="contentsbox" style="top: 330px; left: 500px;">
+            test2
+        </div>
+        <div class="contentsbox" style="top: 530px; left: 500px;">
+            test3
+        </div>
+        <div id = "line" style="top: 150px; left: 400px;"></div>
+        <div id = "line" style="top: 350px; left: 400px;"></div>
+        <div id = "line" style="top: 550px; left: 400px;"></div>
+        
+        <script src="assets/js/modal.js"></script>
+        </main>
+</body>
+</html>

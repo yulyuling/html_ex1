@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mq 테스트</title>
+  <style>
+    * {
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    body {
+        background:rgb(9, 100, 160);
+    }
+
+    img {
+        width: 300px;
+        height: 250px;
+    }
+    #container {
+        width:1140px;
+        margin:50px auto;
+    }    
+    .card {
+        position:relative;
+        float:left;  /* 카드를 가로로 배치 */
+        width:550px;
+        height:250px;
+        margin:10px;
+        border:1px solid #0f0f0f33;
+        background-color:#ffffff;      
+    }
+    .words {
+        position:absolute;    
+        left:310px;
+        top:70px;
+        text-align:center;
+        width:200px;          
+    }
+    @media screen and (max-width: 768px){
+    .card {
+        position:relative;
+        float:left;  /* 카드를 가로로 배치 */
+        width:300px;
+        height:400px;
+        clear: both;  
+    }
+    .words {
+        position:absolute;    
+        left:50px;
+        top:300px;
+        text-align:center;
+        width: 200px;
+    }
+    #container {
+        /* display: flex;  근데 얘는 float를 사용할때 충돌가능성이 있음.*/
+        /* display: flex : 부모 요소 안에서 자식 요소를 정렬하는 역할 */
+        max-width: 700px;
+        width : 100%;
+        margin: 50px auto;
+        display: block;
+        clear: both;
+    }   
+      
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="card">
+      <img src="../day2/media/d1.jpg">    
+      <div class="words">
+        <h2>아유... 하기 싫어..</h2>
+        <h3>- 박명수</h3>
+      </div>            
+    </div>
+    <div class="card">
+      <img src="../day2/media/d2.jpg">    
+      <div class="words">
+        <h2>그냥 놀고 싶다</h2>
+        <h3>- 박명수</h3>
+      </div>            
+    </div>            
+  </div>
+</body>
+</html>
