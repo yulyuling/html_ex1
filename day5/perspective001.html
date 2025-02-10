@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1. opacity 이용  */
+        .box {
+            width: 500px;
+            height: 700px;
+            margin: 50px;
+            position: relative;
+            transition: transform 3s;
+        }
+
+        .image1, .image2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            transition: opacity 3s;
+        }
+
+        .image1 {
+            background-image: url("poket1.png");
+            opacity: 1;
+        }
+
+        .image2 {
+            background-image: url("poket2.png");
+            opacity: 0;
+        }
+        .box:hover {
+            transform: rotateY(180deg);
+        }
+        .box:hover .image1 {
+            opacity: 0; 
+        }
+        .box:hover .image2 {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="image1"></div>
+        <div class="image2"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .line1 {
+            position: relative;
+            
+        }
+        .line2{
+            position: absolute;
+            top: -2.px;
+            left:73px;
+        }
+        /* 그리드,플렉스로 정렬하거나 */
+        /* display: inline-block; */
+        /* width: 120px */
+    </style>
+</head>
+<body>
+    <div>
+        <label class="line1">아이디: <span class="line2"> <input id="userId"> </span></label>
+    </div>
+    <div>
+        <label>비밀번호: <span> <input type="password" id="userPassword"> </span></label>
+    </div>
+    <div>
+        <label>비밀번호: <span></span><input type="password" id="userPassword2"> </span></label>
+    </div>
+    <div>
+        <button onclick="fnJoin()">회원가입</button>
+    </div>
+    <label><input type="radio" name="gender" value="M">남자</label>
+    <label><input type="radio" name="gender" value="F">여자</label>
+    <!-- name을 똑같은거 쓰면 그룹이 됨/초기선택안되어있음 -->
+</body>
+</html>
+<script>
+    function fnJoin(){
+        //아이디는 최소 6글자 이상
+        let userId = document.querySelector("#userId").value;
+        let num1 = document.querySelector("#userPassword").value;
+        let num2 = document.querySelector("#userPassword2").value;
+        let list = document.getElementsByName("#gender");
+        if(userId.length < 6){
+            alert("아이디는 6글자 이상이어야합니다.");
+            return;
+        }
+        if(num1.length < 8){
+            alert("비밀번호는 8글자 이상이어야합니다");
+            return;
+        }
+        if (num1 !== num2){
+            alert("비밀번호가 다름");
+            return;
+        }
+        console.log(list[0].checked);
+        // checked 는 참인지 트루인지 체크
+        if(!list[0].checked && !list[1].checked){
+            // 
+            alert("성별 선택하세용");
+            return;
+        // for(let i=0 i<list.length; i++){
+
+        }
+    }
+        //비밀번호를 2개 입력받아서 두 값이 다르면
+        //'비밀번호가 다릅니다 출력'
+        //비밀번호가 8미만이면 '비;밀번호를 8글자 이상이어야합니다 출력'
+        //-------
+
+        //radio 버튼으로 성별, 선택
+        //디폴트는 아무것도 체크 안된 상태에서 '회원가입'버튼 클릭시
+        //성별을 선택해주세요 출력
+</script>

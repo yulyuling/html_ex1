@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box-wrapper {
+         perspective: 250px; /* 부모 요소에 설정 */
+        
+        .box {
+            background-color: navy;
+            width: 200px;
+            height: 200px;
+            margin: 30px;
+            animation: rotate 3s infinite, bgcolor 3s 2 infinite; /*test 2s 1 alternate;*/
+            perspective: 1000px;
+            /* 이렇게 한번에 써도 됨. rotate는 @key의 이름 */
+            /* 이렇게 두개를 써도 됨  (콤마로 구분)*/
+
+            /* animation-name: rotate; */
+            /* animation-duration: 3s; */
+            /* 몇초동안 */
+            /* animation-iteration-count: infinite; */
+             /* 반복횟수 */
+            /* animation-direction: alternate; */
+            /* 양방향 */
+        }
+        /* 애니매이션효과 */
+        /* <slider>에 애니매이션효과 이름 넣으면된다 */
+        @keyframes rotate {
+            from {
+                transform: perspective(250px) rotate(0deg);
+            }
+            /* 이런식으로 조건을 주는것도 된다 */
+            50%{
+                transform: perspective(250px) rotate(180deg);
+            }
+            to {
+                transform: perspective(250px) rotate(180deg);
+            }
+        }
+        @keyframes bgcolor {
+            from{background-color: brown;}
+            10%{background-color: antiquewhite;}
+            30%{background-color: rgb(209, 170, 119);}
+            40%{background-color: antiquewhite;}
+            60%{background-color: rgb(83, 75, 65);}
+            100%{background-color: rgb(28, 60, 107);}
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: navy;
+            width: 200px;
+            height: 200px;
+            margin: 30px;
+
+            animation-name: slider;
+            animation-duration: 4s;
+            /* 몇초동안 */
+            animation-iteration-count: infinite;
+             /* 반복횟수 */
+            animation-direction: alternate;
+            /* 양방향 */
+        }
+        /* 애니매이션효과 */
+        /* <slider>에 애니매이션효과 이름 넣으면된다 */
+        @keyframes slider {
+            from {
+                transform: translateX(0);
+            }
+            /* 이런식으로 조건을 주는것도 된다 */
+            /* 100%{ */
+            /* } */
+            to {
+                transform: translateX(300px);
+            }
+            /* 이동하려는 좌표줬음 */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

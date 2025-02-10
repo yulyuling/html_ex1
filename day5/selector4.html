@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:first-child{
+            font-style: italic;
+        }
+        /* 부모요소의 li에서 첫번째 애들만 적용됨 */
+        li:nth-child(2){
+            color: red;
+        }
+        /* nth-child(n) n번째 애들만 적용*/
+        li:nth-child(2n+1){
+            background-color: aquamarine;
+        }
+        /* 배수인 애들만 적용 2n, even짝수 2n+1, odd홀수*/
+        
+    </style>
+</head>
+<body>
+    <ol>
+        <li>자바</li>
+        <li>DB</li>
+        <li>HTML</li>
+        <li>javascript</li>
+        <li>JSP</li>
+    </ol>
+    <ul>
+        <li>GIT</li>
+        <li>UML</li>
+        <li>Figma</li>
+    </ul>
+</body>
+</html>

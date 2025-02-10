@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt{
+            color: black;
+            background-color:rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    <div id="txt"> 자바는 재밌다 </div>
+    <div> 
+        <button onclick="fnColor()"> 
+            색변경
+        </button>
+    </div>
+</body>
+</html>
+<script>
+    function fnColor(){
+        let txt = document.querySelector("#txt")
+        if(txt.style.color == "blue"){
+            txt.style.color = "red";
+        } else {
+            txt.style.color = "blue";
+            txt.style.backgroundColor = "#bbb";
+            // CSS에서 - 인 애들은 카멜표기법으로 바꿔서 쓴다.
+        }
+        // 전체 style에서 넣은 값은 color 값이 최초값이 없음
+        //그래서 컬러를 바꿀려면 <div>내에서 style을 넣어줘야함.
+        //내부속성값이 없으면 변경이 안됨.
+    }
+</script>

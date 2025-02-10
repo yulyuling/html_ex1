@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+        .box{
+            width: 300px;
+            height: 400px;
+            background-image: url(/day5/img/1.jpg);
+            background-size: cover;
+            animation: identifier 3s, background-image 1s 1 ;
+            /* animation-iteration-count: infinite; */
+            /* animation-direction: alternate; */
+            transition: 3s;
+            opacity: 0.5;
+        }
+        .box:hover{
+            transform: rotateY(180deg);
+            background-image: url(/day5/img/2.jpg);
+        }
+        @keyframes identifier {
+            from{
+                transform: perspective(200px) rotateY(0deg);
+            }
+            to{
+                transform: perspective(250px) rotateY(180deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 2. 단순 딜레이 이미지 변경 */
+        .box {
+            width: 500px;
+            height: 700px;
+            background-image: url("/day5/img/1.jpg");
+            background-size: cover;
+            margin: 50px;
+            transition: transform 3s, background-image 1s 1s;
+        }
+        .box:hover {
+            transform: rotateY(180deg);
+            background-image: url("/day5/img/2.jpg");
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

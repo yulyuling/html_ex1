@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: 1px solid rgb(255, 255, 255);
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            margin: 50px;
+            transition: 3s;
+            /* transition : ~동안 천천히 이동한다 */
+            /* all:디폴트/생략가능
+            transform을 넣는다면? 원래는 width, height를 전부 정의해줘야함*/
+        }
+        .box:hover{
+            transform: skewX();
+            /* rotateY Y축으로 이동한다 XYZ*/
+            /* scale: () 배수만큼 크기가 커짐 0.n이면 작아짐 */
+            /* scale(x y z)이것두 가능함 */
+            /* background-color: aquamarine; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        
+    </div>
+</body>
+</html>
+<script>
+
+</script>

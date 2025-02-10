@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid white;
+            background-color: wheat;
+            transform: perspective(1000px);
+            animation: card 3s;
+        }
+        .card1{
+            background-color: black;
+        }
+        .card2{
+            background-color: aqua;
+        }
+        @keyframes card {
+            from{
+                transform: rotateY(0deg);
+            }
+            to{
+                transform: rotateY(180deg);
+            }            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="card1"></div>
+        <div class="card2"></div>
+    </div>
+</body>
+</html>

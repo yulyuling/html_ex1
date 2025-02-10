@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            color:black
+        }
+        .txt1{
+            font-weight: bold;
+        }
+        #java{
+            font-size: 20px;
+        }
+        /* 얘네가 선택자 (얘네가 제일 많이 씀 [ , ., # ])*/
+
+        span{
+            background-color: aquamarine;
+        }
+        div span{
+            background-color: blueviolet;
+            /* div 밑에 있는 모든 span에 적용. a로 감싸져도 적용됨*/
+        }
+        div > span{
+            font-style: italic;
+            /* 바로 밑에 있는 자식만 가능 <a>코드가 중간에 섞이면 적용안됨 */
+        }
+        div, span{
+            border: 1px solid black;
+            /* ,가 있으면 둘 다 적용해라 */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="txt1" id="java">
+        <a><span> 자바 ㅋㅋ</span></a>
+    </div>
+    <div>
+        <span> html </span>
+    </div>
+        <a><span> 오라클 ㅎㅎ</span></a>
+</body>
+</html>

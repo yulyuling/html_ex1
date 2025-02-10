@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">타이틀</h1>
+    <div>
+        <p>자바</p>
+        <p>오라클</p>
+    </div>
+        <input id="num1">
+        <input id="num2">
+        <!-- <button onclick="fnAlert()">버튼</button> -->
+        <button onclick="sum"> 더하기 </button>
+
+</body>
+</html>
+<script>
+    // document.querySelector("#title"); >> 하나의 노드
+    // document >> dom-문서 전체
+    // let node1 = document.querySelector("#title");
+    // node1.style.color = "red";
+    // js의 데이터 타입: let, var, const
+    function sum(x,y){
+        // return x + y;
+        console.log(x+y);
+    }
+
+    let num1 = document.querySelector("#num1").value;
+    let num2 = document.getElementById('num2').value;
+    // getElementBy Id 이렇게 가져오면 id자체를 가져온다 그래서 #이 붙을 필요가없다.
+    // ''써도 동작함
+    alert(parseInt(num1) + Number(num2));
+    //문자열로 되어있으니깐 parseint붙여줘야함 혹은 number도 된다
+    
+    
+
+</script>
