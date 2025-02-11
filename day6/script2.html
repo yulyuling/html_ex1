@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 800px;
+            height: 800px;
+            margin: 10px auto;
+            border: 2px solid #e4e4e4;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="../day2/media/d5.jpg" id="hhh">
+
+    </div>
+</body>
+</html>
+<script>
+    let container = document.querySelector("#container");
+    container.onclick = (e)=> {
+        console.log(e);
+        alert(e.pageX + "," + e.pageY);
+    };
+    let img = document.querySelector("#hhh");
+    img.onclick = function(){
+        this.src = "../day2/media/d4.jpg";
+        //요건 또 경로 바꿀때 << this >>
+        // alert(this.src);
+        //여기서 this는 (img.src) 인데, 샤실 img 본인이기때문에 this로 쓴대
+    }
+    // container.onclick = fnClick
+    //속성명 그대로 .onclick 불러오면 된다 ,  fnclick 함수명 불러오기
+    //재사용 될 일이 없으므로 계속 사용할 함수를 만들 필요가 없다.
+    //익명함수나 time에 썼던 함수처럼
+    
+
+</script>

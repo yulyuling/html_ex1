@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    숫자 입력 : <input id="number">
+    </div>
+    <div>
+    <button onclick="fnCreateNode()">리스트추가</button>
+    </div>
+    <ul id="list">
+    </ul>
+</body>
+</html>
+<script>
+    //숫자를 입력하면 입력한 갯수만큼 리스트에 1추가
+    function fnCreateNode(){
+        let list = document.querySelector("#list");
+        let number = document.querySelector("#number").value;
+
+        for(let i=1; i<=number; i++){
+            let node = document.createElement("li");
+            node.innerHTML = i;
+            if(i % 2 == 0){
+                let style = document.createAttribute("style");
+                style.value = "color : blue";
+                node.setAttributeNode(style);
+            }
+            list.appendChild(node);
+        }
+    }
+
+</script>

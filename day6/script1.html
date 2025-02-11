@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #js{
+    
+        }
+        #java{
+
+        }
+        #oracle{
+
+        }
+        #html{
+
+        }
+    </style>
+</head>
+<body>
+    <h1>과목 목록</h1>
+    <h3 id="js">자바스크립트</h3>
+    <hr>
+    <div id="list">
+        <p id="java">자바</p>
+        <p id="oracle" style="color: red;">오라클</p>
+        <p id="html">html</p>
+    </div>
+    <hr>
+    <!-- 버튼 영역 -->
+     <button onclick="fnAppend()">appendChild</button>
+     <button onclick="fnBefore()">insertBefore</button>
+     <button onclick="fnCreateNode()">createElement</button>
+     <button onclick="fnCreateAttr()">createAttribute</button>
+     <button onclick="fnRemoveNode()">removeChild</button>
+     <button onclick="fnRemoveAttr()">removeAttribute</button>
+     <button onclick="fnClone()">cloneNode</button>
+</body>
+</html>
+<script>
+    // append 이어 붙이기
+    function fnAppend(){
+        let list = document.querySelector("#list");
+        let js = document.getElementById("js");
+        list.appendChild(js);
+    }
+    // 맨 뒤에 넣고 싶지 않을때
+    function fnBefore(){
+        let list = document.querySelector("#list");
+        let js = document.getElementById("js");
+        let oracle = document.getElementById("oracle");
+        list.insertBefore(js, oracle);
+    //기준은 오라클/ 오라클 앞에 넣겠다
+    }
+    //
+    function fnCreateNode(){
+        let list = document.querySelector("#list");
+        let jquery = document.createElement("p"); //노드를 만드는 방법임 .createElement()
+        // <p>jquery</p>
+        jquery.innerHTML= "<strong>jquery</strong>";
+        list.appendChild(jquery);
+        // innerText / textContent / innerHTML 다 넣어짐
+        //innerText, textContent : <strong>jquery</strong>
+        //innerHTML : 는 <strong> 속성도 출력됨
+    }
+    //스타일 속성을 만들어서 넣어줌
+    function fnCreateAttr(){
+        let list = document.querySelector("#list");
+        let jquery = document.getElementById("p");
+        jquery.innerText= "jquery";
+        
+        let style = document.createAttribute("style");
+        style.value = "color: blue; font-weight: bold;";
+        //스타일 노드를 만들어 뒀따 <아직 안 들어간 상태니깐 아래서 붙여줘야함>
+        jquery.setAttributeNode(style);
+        //set Attribute 시켜서 jquery에 부착했따
+        list.appendChild(jquery);
+    //
+    }
+    function fnRemoveNode(){
+        let list = document.querySelector("#list");
+        let js = document.getElementById("oracle");
+        list.removeChild(oracle);
+        //자식요소에서 삭제할거다 removeChild
+    }
+    function fnRemoveAttr(){
+        let js = document.getElementById("oracle");
+        oracle.removeAttribute("style");
+        // 오라클에 달린 속성을 삭제한다 removeAttribute
+    }
+    function fnClone(){
+        let list = document.querySelector("#list");
+        let js = document.getElementById("js");
+        list.appendChild(js.cloneNode(true));
+        //복사하는 거!
+        //(js.cloneNode(true)) 이게 불값이라서 true를 넣어줘야한다.
+    }
+
+
+
+</script>
