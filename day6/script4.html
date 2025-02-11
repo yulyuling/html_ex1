@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="subject" value="java"> java
+    <input type="radio" name="subject" value="html"> html
+    <input type="radio" name="subject" value="oracle"> oracle
+    <input type="radio" name="subject" value="jquery"> jquery
+    <button onclick = "fnSubject()">선택</button>
+</body>
+</html>
+<script>
+    //버튼을 클릭하면 알림창에 선택한 애의 이름이 떳으면 좋겠다
+    function fnSubject(){
+        let subject = document.querySelector("input[name='subject']:checked");
+        if(subject){
+            alert(subject.value);
+        //
+        } else {
+            alert("선택 안함");
+        }
+        //여기서 뭔갈 선택하면, subject에 들어간다.
+    }
+</script>

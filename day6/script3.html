@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td {
+            border : 1px solid black;
+            text-align: center;
+            border-collapse: collapse;
+            padding: 5px 10px;
+        }
+        input{
+            width: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <input id="rCnt" value="1"> 행 <input id="cCnt" value="1"> 열
+    <button onclick="fnDrawTable()">작성</button>
+    <div id="contents"></div>
+    <!-- 테이블을 여기에 그릴겨 "contents" -->
+
+    <!-- 5행 5열 -->
+    <!-- <table>
+        tr 행 그리기 
+        td 열 그리기 (ㅋㅋ)
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table> -->
+</body>
+</html>
+<script>
+     function fnDrawTable(){
+        let rows = document.querySelector("#rCnt").value;
+        let cols = document.querySelector("#cCnt").value;
+        // 이제 테이블 생성해야지
+        let table = document.createElement("table");
+        //i=행이니까 rows까지
+        for(let i=0; i<rows; i++){
+            let tr = document.createElement("tr");
+            for(let j=0; j<cols; j++){
+                let td = document.createElement("td");
+                td.innerHTML = i + "," + j;
+                // i와 j의 좌표를 넣어줌.
+                tr.appendChild(td);
+                //만든 td를 tr에 넣는다 (tr이 td 아빠임)
+            }
+            table.appendChild(tr);
+        }
+        let contents = document.querySelector("#contents");
+        contents.appendChild(table);
+     }
+</script>
+
+
+<script>
+    function fnDrawTable(){
+        let rows = document.querySelector("#rCnt");
+        let cols = document.querySelector("#rCnt");
+        
+        let table = document.createElement("table");
+
+        for(let i=0; i<rows; i++){
+            let tr = document.createElement("tr");            
+            for(let i=0; i<cols; i++){
+                let td = document.createElement("td");
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        let contents = document.querySelector("#contents");
+    }
+</script>

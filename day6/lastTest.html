@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>책 판매</title>
+	<style>
+		#container {
+			width: 600px;
+			margin: 0 auto;
+		}
+
+		#prod-pic,
+		#desc {
+			float: left;
+		}
+
+		#prod-pic {
+			margin: 20px 20px auto 10px;
+			padding: 0;
+		}
+
+		#java {
+			box-shadow: 1px 1px 2px #eee;
+			outline: 1px dashed #ccc;
+			outline-offset: -7px;
+		}
+
+		#small-pic {
+			margin-top: 20px;
+			list-style: none;
+			padding: 0;
+		}
+
+		#small-pic>li {
+			float: left;
+			margin-right: 10px;
+		}
+
+		.small {
+			width: 60px;
+			height: 60px;
+		}
+
+		#small-pic img:hover {
+			cursor: pointer;
+		}
+
+		#desc {
+			width: 300px;
+			padding-top: 20px;
+			margin-bottom: 50px;
+		}
+
+		.bluetext {
+			color: blue;
+			font-weight: bold;
+		}
+
+		#desc button {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			width: 100%;
+			padding: 10px;
+		}
+
+		#desc ul {
+			list-style: none;
+		}
+
+		#desc li {
+			font-size: 0.9em;
+			line-height: 1.8;
+		}
+
+		#desc a {
+			text-decoration: none;
+			font-size: 0.9em;
+			color: blue;
+			padding-left: 40px;
+		}
+
+		hr {
+			clear: both;
+			border: 1px dashed #f5f5f5;
+		}
+        /* 1 */
+		#detail {
+			padding-top: 20px;
+			display: none;
+		}
+        /* 2 */
+		#detail li {
+			font-size: 0.9em;
+			line-height: 1.4;
+		}
+
+		h1 {
+			font-size: 2em;
+		}
+
+		h2 {
+			font-size: 1.5em;
+			color: #bebebe;
+			font-weight: normal;
+		}
+
+		h3 {
+			font-size: 1.1em;
+			color: black;
+		}
+
+		p {
+			font-size: 0.9em;
+			line-height: 1.4;
+			text-align: justify;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="container">
+		<h1 id="heading">자바프로그래밍 책</h1>
+		<div id="prod-pic">
+			<img src="/day2/media/d4.jpg" alt="자바프로그래밍 책" id="java" width="200" height="200">
+			<div id="small-pic">
+				<img src="/day2/media/d1.jpg" class="small">
+				<img src="/day2/media/d2.jpg" class="small">
+				<img src="/day2/media/d3.jpg" class="small">
+			</div>
+		</div>
+		<div id="desc">
+			<ul>
+				<li>상품명 : 자바 책</li>
+				<li class="bluetext">판매가 : 199,000원</li>
+				<li>배송비 : 30,000원<br>(50,000,000원 이상 구매시 무료)</li>
+				<li>적립금 : 199원(0.1%)</li>
+				<li>발매일 : 2023.12.30</li>
+				<button>장바구니 담기</button>
+			</ul>
+			<a href="#" id="view" onclick="detail()">상세 설명 보기</a>
+		</div>
+
+        <!-- 이걸 해라 -->
+		<div id="detail">
+			<hr>
+			<h2>상품 상세 정보</h2>
+			<ul>
+				<li>출판사 : 좋은출판사</li>
+				<li>저 자 : 홍길동</li>
+				<li>언 어 : 한국어/영어</li>
+				<li>판매처 : <a href="javascript:;">클릭</a></li>
+			</ul>
+			<h3>정보</h3>
+			<p>개발 경력 1년 홍길동 개발자가 저술한 자바 프로그래밍 언어 책</p>
+			<h3>제공</h3>
+			<p>샘플 코드, 강의 영상 제공</p>
+		</div>
+	</div>
+</body>
+</html>
+​<script>
+    // detail.style.display = "inline";
+
+    //메인인 java랑, 작은 자바랑 위치를 바꿔야한다
+    let java = document.querySelector("#java");
+    let samllJava = document.querySelectorAll(".small");
+    //스몰자바를 클릭했을 때
+    for(let i=0; i<smallJava.length; i++){
+        smallJava[i].onclick = function(e){
+    //내가 누른 애의 경로 : this.src; , e.target.src;
+        let temp = this.src;
+        this.src = java.src;
+        java.src = temp; 
+        }
+
+    }
+
+    function detail(){
+        let obj = document.querySelector("#detail");
+
+        obj.style.display = "block";
+        if(obj.style.display == "block"){
+            obj.style.display == "none";
+        } else {
+            obj.style.display == "block";
+        }
+    }
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="checkbox" name="subject" value="java"> java
+    <input type="checkbox" name="subject" value="oracle"> oracle
+    <input type="checkbox" name="subject" value="html"> html
+    <input type="checkbox" name="subject" value="jQuery"> jQuery
+    <button onclick = "fnSubject()"> 클릭 </button>
+    <img src="/day2/media/d1.jpg" src="" style="display: none;" alt="이미지">
+    <img src="/day2/media/d2.jpg" src="" style="display: none;" alt="이미지">
+    <img src="/day2/media/d3.jpg" src="" style="display: none;" alt="이미지">
+    <img src="/day2/media/d4.jpg" src="" style="display: none;" alt="이미지">
+</body>
+</html>
+<!-- <script>
+    function fnSubject(){
+        //선택은 여러개 해도, 실제로 나오는 출력은 맨 앞에 한개만 나온다.
+        //querySelector 는 한개만 가져온다 getElementBy 얘도 한개만 나옴
+        //getElementByName은 여러개
+        //querySelectorAll 하면 다 나옴 리스트형태로 나옴
+        let subject = document.querySelectorAll("input[name='subject']:checked");
+
+        for(let i=0; i<subject.length; i++){
+            console.log(subject[i].value);
+            //리스트 형태를 밖으로 꺼냄
+        }       
+    }
+</script>
+
+<script>
+    function fnSubject(){
+        let subject = document.querySelectorAll("input[name='subject']:checked");
+        let img = document.querySelector("img");
+
+        img.style.display = "inline";
+
+        for (let i=0; i<subject.length; i++){
+            subject2 = subject[i].value;
+            // console.log(subject[i].value);
+        } if (subject2 == "java"){
+            img.src="/day2/media/d1.jpg" 
+        } else if(subject2 == "oracle"){
+            img.src="/day2/media/d2.jpg" 
+        } else if(subject2 == "html") {
+            img.src="/day2/media/d3.jpg" 
+        } else if(subject2 == "jQuery"){
+            img.src="/day2/media/d4.jpg" 
+        } else {
+            
+        }
+    }
+</script> -->
+
+<script>
+        function fnSubject(){
+        let subject = document.querySelectorAll("input[name='subject']:checked");
+        let imgeList = document.querySelector("#imageList");
+
+        imageList.innerHTML = "";
+        img.style.display = "inline";
+
+        for(let i=0; i<subject.length; i++){
+            console.log(subject[i].value);
+            let img = document.createElement("img");
+            img.src = "image/" + subject[i].value + ".jpg";
+            imgeList.appendChild(img);
+        }       
+        
+    }
+</script>

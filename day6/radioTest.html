@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="subject" value="java"> java
+    <input type="radio" name="subject" value="java">oracle
+    <input type="radio" name="subject" value="java">html
+    <input type="radio" name="subject" value="java">jQuery
+    <button onclick = "fnSubject()"> 클릭 </button>
+    <img src="/day2/media/d1.jpg" src="" style="display: none;" alt="이미지">
+    <img src="/day2/media/d2.jpg" src="" style="display: none;" alt="이미지">
+    <img src="/day2/media/d3.jpg" src="" style="display: none;" alt="이미지">
+    <img src="/day2/media/d4.jpg" src="" style="display: none;" alt="이미지">
+</body>
+</html>
+<script>
+    function fnSubject(){
+        let subjct = document.querySelector("input[name='subject']:checked").value;
+        let img = document.querySelector("img");
+        
+        img.style.display = "inline";
+        // img.src = "image/" + subject + ".jpg"
+
+        
+        if(subject == "java"){
+            img.src = "/day2/media/d1.jpg"
+        } else if(subject == "oracle"){
+            img.src = "/day2/media/d2.jpg"
+        } else if(subject == "html"){
+            img.src = "/day2/media/d3.jpg"
+        } else if(subject == "jQuery"){
+            img.src = "/day2/media/d4.jpg.jpg" 
+        }
+    }
+</script>
+<script>
+
+    // let subject = document.querySelector("");
+    // let img = document.querySelector("");
+
+    // function fnSubject(){
+    //     // img.src = "/day2/media/d1.jpg";
+    //     for(let i=0; i>=img.length; i++){
+    //         let subimg = document.querySelector("img");
+    //         subimg.scr = img[i];   
+    //     }
+    //     if(subject){
+            
+    //     }
+    // }
+</script>
