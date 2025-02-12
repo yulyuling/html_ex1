@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    메인페이지
+    <button onclick="fnPopup()">팝업</button>
+</body>
+</html>
+<script>
+    function fnPopup(){
+        let top = (screen.availHeight -500)/ 2;
+        let left = (screen.availWidth -500)/ 2;
+        window.open('time.html','time',`width=500, height=500, left=${left}, top=${top}`);        
+    }
+    //윈도우 창에서 중앙을 4개로 나눴을때, 4번째(마지막)에서 왼쪽상단이 기준 점
+    // (html이름, html이름인 애는 하나만 생성 ,width,height)
+    //팝업 만들때 open ==>팝업 띄우는 애는 window를 앞에 붙여줘야함
+    //딴애들은 ㅅ ㅐㅇ략되어있음
+</script>

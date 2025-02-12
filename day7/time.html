@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+        }
+        #time{
+            font-size: 40px;
+            color: rgb(24, 88, 67);
+            font-weight: bold;
+            text-align: center;
+        }
+        .close-button{
+            
+        }
+        .colose-button:hover{
+            background-color: aliceblue;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="colose-button:hover close-button">
+        <button onclick="fnclose()">닫기</button>
+    </div>
+    <div id="container">
+        <div id="time"></div>
+    </div>
+</body>
+</html>
+<script>
+        setInterval(()=>{
+        let datetime = new Date();
+        let time = datetime.getHours()+":"+datetime.getMinutes()+":"+datetime.getSeconds();
+        let obj = document.querySelector("#time");
+        obj.innerHTML = time;
+    }, 1000);
+
+    function fnclose(){
+        window.close();
+    }
+</script>

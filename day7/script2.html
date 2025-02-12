@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .line1 {
+            position: relative;
+            
+        }
+        .line2{
+            position: absolute;
+            top: -2px;
+            left:100px;
+        }
+        /* 그리드,플렉스로 정렬하거나 */
+        /* display: inline-block; */
+        /* width: 120px */
+    </style>
+</head>
+<body>
+    <div>
+        <label class="line1">아이디: <span class="line2"> <input id="userId"> </span></label>
+    </div>
+    <div>
+        <label>비밀번호: <span> <input type="password" id="userPassword"> </span></label>
+    </div>
+    <div>
+        <label>비밀번호 확인: <span></span><input type="password" id="userPassword2"> </span></label>
+    </div>
+    <div>
+        <label>핸드폰번호: <span></span><input type="phone" id="phone"> </span></label>
+    </div>
+    <div>
+        <button onclick="fnJoin()">회원가입</button>
+    </div>
+    <div>
+        <label><input type="checkbox" name="subjcet" value="java">자바</label>
+        <label><input type="checkbox" name="subjcet" value="java">오라클</label>
+        <label><input type="checkbox" name="subjcet" value="java">html</label>
+        <label><input type="checkbox" name="subjcet" value="java">python</label>
+    </div>  
+        <label><input type="radio" name="gender" checked>남자</label>
+        <label><input type="radio" name="gender">여자</label>
+    <!-- name을 똑같은거 쓰면 그룹이 됨/초기선택안되어있음 -->
+</body>
+</html>
+<script>
+    function fnJoin(){
+        // 1. 아이디는 6글자 이상, 숫자와 영어-소문자로만 구성
+        let userId = document.querySelector("#userId").value;
+        let num1 = document.querySelector("#userPassword").value;
+        let num2 = document.querySelector("#userPassword2").value;
+        let list = document.getElementsByName("gender");
+        let phone = document.querySelector("#phone").value;
+        let userPassword = document.querySelector("#userPassword").value;
+        
+
+        const regEx2 = /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g;
+        const regExp = /^[a-z0-9_]{6,20}$/;
+        const phone2 = /[0-9]/g;
+        
+        if(!regExp.test(userId)){
+            alert("아이디는 숫자와 영어-소문자만 가능합니다.")
+            return;
+        }
+        if(userId.length < 6){
+            alert("아이디는 6글자 이상이어야합니다.");
+            return;
+        }      
+        if(num1.length < 6){
+            alert("비밀번호는 6글자 이상이어야합니다");
+            return;
+        }
+        if(!regEx2.test(userPassword)){
+            alert("비밀번호는 특수문자가 1개이상 포함되어야합니다.");
+            return;
+        }
+        if (num1 !== num2){
+            alert("비밀번호가 다름");
+            return;
+        }
+        if(!phone2.test(phone)){
+            alert("핸드폰 번호는 숫자만");
+            return;
+        }
+        if(phone.length < 11){
+            alert("핸드폰 번호는 11글자 ");
+            return;
+        }
+        // 4. 관심언어를 1개도 선택하지 않았을 경우 
+        let subject2 = document.querySelectorAll("input[name='subjcet']:checked");
+        if(subject2.length < 1) {
+            if(!confirm("관심언어를 선택하지 않았습니다. 그대로 진행하시겠습니까?")){
+                return;
+            };
+        }
+        alert("회원가입 성공");
+        location.href="popup.html";
+        //회원가입이 성공하면 메인페이지로 이동하게 링크를 건다
+        //** 페이지 이동이라 자주 쓰임 **
+    }
+            //     console.log(list[0].checked);
+        // if(!list[0].checked && !list[1].checked){
+        //     alert("성별 선택하세용");
+        //     return;
+        // }
+
+    // 1. 아이디는 6글자 이상, 숫자와 영어-소문자로만 구성
+	// 2. 패스워드는 6글자 이상, 특수문자 최소 1개 포함
+	// 3. 핸드폰번호는 11글자 고정. 숫자만 입력 받도록
+	// 4. 관심언어를 1개도 선택하지 않았을 경우 
+	// 	confirm -> '관심언어를 선택하지 않았습니다. 그대로 진행하시겠습니까?' 
+	// 	'확인' 누르면 그대로 진행. '취소' 누르면 다시 입력받도록 함
+	// 5. 성별은 남/여 디폴트로 성별 하나에 체크되어 있도록 함
+	// 6. 1~5번을 모두 만족할 경우 '회원가입을 축하합니다.' 알림 후 'main.html' 페이지로 이동
+
+
+
+    //test : 값에 특수문자가 있는지 없는지 판별한다. (위에 있는 문자들) 불값이라 true/false
+</script>

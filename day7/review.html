@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
+    <!-- &icon_names=delete 맨 뒤에 요거만 제거하면 링크 또 안걸고 스팬만 걸엉서 다른 애도 추가해서 쓸 수 있다 -->
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head >
+
+<body>
+    <h1>메모장</h1>
+    <input id="txt" type="text">
+    <button onclick="fnMemo();">추가</button>
+    <ul id="list" ></ul>
+</body>
+</html>
+<script>
+    let list = document.querySelector("#list");
+    function fnMemo(){
+        let txt = document.querySelector("#txt").value;
+        let item = document.createElement("li");
+        item.innerHTML = txt + '<a class="material-symbols-outlined">delete</a>'
+
+        item.onclick = function(e){
+            if(!confirm("정말 삭제하시겠습니까?")){
+                return;
+            };
+            // confirm == 알림창 불타입
+            list.removeChild(e.target);
+        }
+
+        list.appendChild(item);
+        document.querySelector("#txt").value="";
+    }
+
+</script>

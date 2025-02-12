@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="../day2/media/d2.jpg" width="500" height="500">
+</body>
+</html>
+<script>
+    let img = document.querySelector("#img");
+    img.addEventListener("mouseover", ()=>{
+        img.src = "../day2/media/d3.jpg";
+    });
+    img.addEventListener("mouseout", ()=>{
+        img.src = "../day2/media/d2.jpg";
+    })
+    // ("mouseover", );  뒤엔 함수
+</script>
