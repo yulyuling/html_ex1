@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="fnList">데이터 가져오기</button>
+        <ul>
+            <li v-for="user in users" :key="user.id">
+                {{ user.name }} ({{ user.email }})
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    users: [] // API에서 받은 데이터를 저장할 배열
+                };
+            },
+            methods: {
+                fnList() {
+                    $.ajax({
+                        url: "https://jsonplaceholder.typicode.com/users",
+                        dataType: "json",
+                        type: "GET",
+                        success: (data) => {
+                            console.log("데이터 수신 완료:", data);
+                            this.users = data; // 데이터를 Vue의 users 배열에 저장
+                        },
+                        error: (xhr, status, error) => {
+                            console.error("AJAX 오류:", status, error);
+                        }
+                    });
+                }
+            },
+            mounted() {
+                // 페이지 로드 시 자동으로 API 요청 (선택사항)
+                this.fnList();
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>

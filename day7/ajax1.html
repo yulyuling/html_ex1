@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    
+    <button ></button>
 
 </body>
 </html>
@@ -27,20 +27,7 @@
             type : "GET",
             data : {},
             success : function(data){ //서버통신이 정상적으로 실행되면 이 코드가 실행된다.
-                // console.log(data[0].username);
-                // document.querySelector("#contents");
-                // contents.innerHTML = data;
-                
-                $("#list-table").html("");
-
-                $("<tr" ,{
-                    html:"<td>" + "아이디" + "</td>" +
-                        "<td>" + "이름" + "</td>" +
-                        "<td>" + "이메일" + "</td>" +
-                })
-                
-                // <th>아이디</th><th>이름</th>th>이메일</th>th>웹사이트</th>;
-
+    
             } 
         });
     }

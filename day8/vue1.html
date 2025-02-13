@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <!-- 모든 작업은 div 안에서만 해야함 -->
+    <!-- div안에서 조건문이나 반복문이 가능함 -->
+    <div id="app">
+        <!-- name이 빈값일때만 보이게 -->
+        <div v-if="name == ''">
+            <!-- inputName만들어서 빈값으로 일단 만들어 -->
+            <input v-model="inputName"> </input>
+        </div>
+        <div v-else-if="name == '홍길동'">
+            {{name}}님은  입니다.
+        </div>
+        <div v-else="name == ''">
+            <input v-model="inputName" disabled> </input>
+            <!-- disabled 입력못하게 막음 -->
+        </div>
+        
+        <div>{{name}}</div>
+        <button @click="fnName">클릭</button>
+        <!-- @click = onclick  () 생략 가능/함수명만 호출해도 됨[파라미터 보낼게 없으면ㅋㅋ]-->
+    </div>
+</body>
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                // 변수 선언 부분 ▼ { }map. 로 감싸져있다. 그래서 key value의 map
+                // map 2개 이상 출력시 ,
+                name : "",
+                age : "",
+                inputName : "",
+            };
+        },
+        methods: {
+            // 함수(메소드)
+            //얘도 { }라서 map 형태라 key값을 줘야함.
+            //화살표함수, 익명함수 다 된다
+            //this.를 꼭 붙여야한다. 다른 영역에서 변수를 불러올때
+            //this를 다른 곳에 담아서 쓴다. let self = this;
+            fnName : function(){
+                let self = this;
+                self.name = self.inputName;
+                //inputName을 name에 넣으면 빈 곳(입력값)이 네임으로 들어간다
+                
+            }
+            
+        },
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+        }
+    });
+
+    app.mount('#app');
+</script>

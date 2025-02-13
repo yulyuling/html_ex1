@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+    table, tr, td, th{
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px 10px;
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div style="margin-bottom: 5px;">
+        <select v-model = "selectitem">
+            <option value="userId">아이디</option>
+            <option value="userName">이름</option>
+        </select>
+        <input v-model="keyword"></input>
+        <button @click="fnUserList">검색</button>
+    </div>
+        <table>
+            <tr>
+                <th>아이디</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>웹사이트</th>
+            </tr>
+            <tr v-for="item in list">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.wepsite}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    list: [], // API에서 받은 데이터를 저장할 배열
+                    keyword: "",
+                    selectitem: "userName",
+                };
+            },
+            methods: {
+                fnUserList: function (){
+                    let self = this;
+                    let param = {};
+                    //아이디 : {id : self.keyword}
+                    //이름 : {name : self.keyword}
+                    if(self.keyword != "")
+                    if(self.fnList == "userId"){
+                        param = {id : self.keyword}
+                    } param = {name : self.keyword}
+
+                    $.ajax({
+                        url: "https://jsonplaceholder.typicode.com/users",
+                        dataType: "json",
+                        type: "GET",
+                        data: {},
+                        success: (data) => {                            
+
+                            console.log("데이터 수신 완료:", data);
+                            this.id = data; // 데이터를 Vue의 users 배열에 저장
+                        },
+                        error: (xhr, status, error) => {
+                            console.error("AJAX 오류:", status, error);
+                        }
+                    });
+                }
+            },
+
+            mounted() {
+                // 페이지 로드 시 자동으로 API 요청 (선택사항)
+                this.fnList();
+            }
+        });
+
+        app.mount('#app');
+    </script>

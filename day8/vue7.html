@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        table, tr, td, th{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px 10px;
+            text-align: center;
+        }
+        a, a:link{
+            color: black;
+            text-decoration: none;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table v-if="!viewFlg">
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>웹사이트</th>
+                <th>삭제</th>
+            </tr>
+            <tr v-for="(item, index) in list" v-for="(value, i) in list" :key="i">
+                <td>{{index+1}}</td>
+                <td>
+                    <a href="javascript:;" @click="fnSetUser(item)">{{item.name}}</a>
+                </td>
+                <td>
+                    <span v-if="(index+1) % 2 == 1" style="color: blue;">{{item.email}}</span>
+                    <span v-else style="color: rgb(114, 19, 19);">{{item.email}}</span>
+                </td>
+                <td>{{item.website}}</td>
+                <td><button @click="remove">삭제</button></td>
+            </tr>
+        </table>
+        </div>
+        <div v-if="viewFlg">
+            상세정보:
+            <div>이름: {{user.name}}</div>
+            <div>번호: {{user.phone}}</div>
+            <div>회사명: {{user.company.name}}</div>
+            <div>주소: {{user.address.street}}</div>
+            <button @click="viewFlg = !viewFlg">되돌아가기</button>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                // 변수
+                list:[],
+                user:{},
+                viewFlg : false,
+                rows:[],
+            };
+        },
+        methods: {
+            // 함수(메소드)
+            fnSample: function () {
+                var self = this; //this를 여기서 정의
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/users",
+                    dataType: "json",
+                    type: "GET",
+                    data: {},
+                    success: function (data) {
+                        self.list = data;
+                    }
+                });
+            },         
+            fnSetUser : function(item){
+                let self = this;
+                console.log=(item);
+                self.user = item;
+                self.viewFlg = true;
+            },
+            remeve: function(row){
+                let self = this;
+                data.splice(self.index, 1)
+                self.$router.push({
+                    path:"/"
+                })
+            }
+        },
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+            let self = this;
+            self.fnSample();
+        }
+    });
+
+    app.mount('#app');
+</script>
