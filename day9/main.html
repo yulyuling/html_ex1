@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        table, tr, td, th {
+            border : 1px solid black;
+            border-collapse: collapse;
+            padding : 5px 10px;
+            text-align: center;
+        }
+        .blue-txt {
+            color : blue;
+        }
+        .pink-txt {
+            color : pink;
+        }
+        a, a:link{
+            color : black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table v-if="!viewFlg">
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>이메일</th>
+                <th>웹사이트</th>
+                <th>삭제</th>
+                <th>수정</th>
+            </tr>
+            <tr v-for="(item, index) in list">  
+                <td>{{index+1}}</td>            
+                <td>
+                    <a href="javascript:;" @click="fnSetUser(item)">{{item.name}}</a>
+                </td>
+                <td>
+                    <span v-if="(index+1) % 2 == 1" class="blue-txt">{{item.email}}</span>
+                    <span v-else class="pink-txt">{{item.email}}</span>
+                </td>
+                <td>{{item.website}}</td>
+                <td><button @click="fnRemove(index)">삭제</button></td>
+                <td><button @click="fnEdit(item)">수정</button></td>
+            </tr>
+        </table>
+        <div v-if="viewFlg">
+            <div v-if="!updateFlg">
+                상세정보 
+                <div>이름 : {{user.name}}</div>
+                <div>번호 : {{user.phone}}</div>
+                <div>회사명 : {{user.company.name}}</div>
+                <div>주소 : {{user.address.street}}</div>
+                <button @click="viewFlg = !viewFlg">되돌아가기</button>
+            </div>
+            <div v-else>
+                <div>이름: <input v-model="user.name" disabled></div>
+                <div>이메일: <input v-model="email"></div>
+                <div>웹사이트: <input v-model="website"></div>
+                <button @click="fnSave; viewFlg=flase">저장</button>
+                <!-- fnSave; viewFlg=flase 하면 따로 함수를 만들지 않아도 바로 반영됨 -->
+                <button @click="viewFlg = !viewFlg">되돌아가기</button>
+            </div>
+    </div>
+</body>
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                // 변수
+                list : [],
+                user : {},
+                viewFlg : false,
+                updateFlg : false,
+            };
+        },
+        methods: {
+            // 함수(메소드)
+            fnSample : function () {
+                var self =  this;
+                $.ajax({
+                    url: "https://jsonplaceholder.typicode.com/users",
+                    dataType: "json",
+                    type: "GET",
+                    data: {},
+                    success: function (data) {
+                        self.list = data;
+                    }
+                });
+            },
+            fnSetUser : function(item){
+                let self = this;
+                console.log(item);
+                self.user = item;
+                self.viewFlg = true;
+                self.updateFlg = false;
+
+            },
+            fnRemove : function(index){
+                let self = this;
+                if(!confirm("정말 삭제?")){
+                    return;
+                }
+                self.list.splice(index, 1);
+            },
+            fnEdit : function(item){
+                let self = this;
+                console.log(item);
+                self.user = item;
+                
+                self.website = user.website;
+                self.email = user.email;
+                
+                self.viewFlg = true;
+                self.updateFlg = true;
+            },
+            fnSave : function(){
+                let self = this;
+                self.viewFlg = true;
+                self.user.email = self.email;
+                self.user.website = self.website;
+            },
+
+        },
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+            let self = this;
+            self.fnSample();
+        }
+    });
+
+    app.mount('#app');
+</script>
